@@ -1,0 +1,64 @@
+{
+    "name": "MessageBird",
+    "logo": {
+      "light": "/logo.png",
+      "dark": "/logo.png"
+    },
+    "favicon": "/favicon.png",
+    "colors": {
+      "primary": "#003BFF",
+      "light": "#537AFA",
+      "dark": "#003BFF"
+    },
+    "topbarCtaButton": {
+      "name": "Start Now",
+      "url": "https://app.messagebird.com/auth/sign-up"
+    },
+    "topbarLinks": [
+      {
+        "name": "Sign In",
+        "url": "https://messagebird.com/sign-in"
+      }
+    ],
+    "tabs": [
+        {
+            "name": "API Reference",
+            "url": "api-reference"
+        }
+    ],
+    "navigation": [
+      {
+        "group": "Welcome to MessageBird",
+        "pages": [
+            "welcome-to-the-messagebird-engagement-platform"
+        ]
+      },
+      {
+        "group": "Organizational Settings",
+        "pages": [
+            "organizational-settings/organization-settings-overview",
+            "organizational-settings/general",
+            "organizational-settings/business-profile",
+            "organizational-settings/workspaces"
+        ]
+      },
+      {
+        "group": "Welcome to the MessageBird API",
+        "pages": [
+            "api-reference/welcome-to-the-messagebird-engagement-platform-api-docs"
+        ]
+      },
+      {
+        "group": "API Access",
+        "pages": [
+            "api-reference/api-access/api-access-overview",
+            "api-reference/api-access/access-policies"
+        ]
+      }
+    ],
+    "footerSocials":
+      {
+          "twitter": "https://twitter.com/messagebird?lang=en",
+          "linkedin": "https://www.linkedin.com/company/messagebird-com/"
+      }
+  }

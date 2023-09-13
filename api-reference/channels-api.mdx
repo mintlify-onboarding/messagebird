@@ -1,0 +1,47 @@
+---
+title: "Channels API"
+---
+
+The MessageBird Channels API is an omnichannel messaging solution to allow customers to send and receive messages to multiple different messaging services. This includes SMS, Email and WhatsApp. See [supported channels](/api/channels-api/supported-channels).
+
+To get started with the Channels API you can register for a free account and install your [first channels.](https://docs.messagebird.com/applications/channels/channels)
+
+Next check out the [API reference](/api/channels-api/api-reference) for sending messages and managing channels 
+
+## Permissions required for Channel actions
+
+To manage channels or send messages via the API the access key that is being used needs a certain level of [permissions](/api/api-access/access-policies) to carry out these actions. 
+
+The examples below give your access key permissions to all channels in all of your workspaces but you replace the wildcards with either specific workspace or channel ids to limit the scope further
+
+### Channel Viewer
+
+An example of the resource permissions that are required to view a list of all channels, specific channels, channel messages and uploaded media create an access policy that allows _view_ as follows:
+
+| Action                                               | Resource                                            |
+| ---------------------------------------------------- | --------------------------------------------------- |
+| List all channels                                    | /workspaces/\*/channels                             |
+| Get a specific channel                               | /workspaces/\*/channels/\*                          |
+| Get all messages for a channel                       | /workspaces/\*/channels/\*/messages                 |
+| Get a specific message for a channel                 | /workspaces/\*/channels/\*/messages/\*              |
+| Get changes that have happened to a message          | /workspaces/\*/channels/\*/messages/\*/diffs        |
+| Get all interactions that have happened to a message | /workspaces/\*/channels/\*/messages/\*/interactions |
+| Get outgoing media to channels                       | /workspaces/\*/channels/\*/media/\*                 |
+| Get media attached to incoming messages              | /workspaces/\*/messages/\*/media/\*                 |
+
+## Message sender
+
+To send messages to a channel create an access policy that allows _create_ as follows:
+
+| Action               | Resource                                    |
+| -------------------- | ------------------------------------------- |
+| Create a new message | /workspaces/\*/channels/\*/messages         |
+| Upload media         | /workspaces/\*/channels/\*/presigned-upload |
+
+## Updating channel settings
+
+To update settings for a channel create an access policy that allows _update_ as follows:
+
+| Action                  | Resource                   |
+| ----------------------- | -------------------------- |
+| Update channel settings | /workspaces/\*/channels/\* |

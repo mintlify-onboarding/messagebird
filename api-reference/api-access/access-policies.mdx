@@ -1,0 +1,41 @@
+---
+title: "Access Policies"
+---
+
+## Access policies
+
+An access policy is a set of rules and each one determines the access to one or multiple resources. Access policies can be managed via [https://app.messagebird.com/settings/access-policies](https://app.messagebird.com/settings/access-policies).
+
+When creating access policies you should give access only to the resources you need to access via the API. 
+
+### Creating an access policy
+
+In this example we will create an access policy that will allow you to send and retrieve messages sent to any channels in your workspace
+
+<Frame>![](/images/work-here-0.png)</Frame>
+
+Create a custom policy
+
+1. The first step is to give your access policy a meaningful **name** and **description.**  
+
+<Frame>![](/images/work-here.png)</Frame>  
+Access Policy Name and Description
+
+2. Next define a policy definition. The one shown will **Allow** you to **Create** (POST/Send) messages to the /channels endpoint and also create media for sending image messages  
+<Frame>![](/images/work-here-2.png)</Frame>  
+
+3. The second policy definition will **Allow** you to **View** (GET) all messages and specific messages on channels
+
+4. Finally Create Policy  
+<Frame>![](/images/work-here-3.png)</Frame>  
+
+### Understanding policy definitions
+
+Policy definitions provide extremely fine grained control over the endpoints in your workspace. Each of your access policies can have one or more definitions. By default any endpoints that do not have explicit allow access (will result in access denied when trying to access them). Examining a definition in detail:
+
+| Field Name  | Description                                                                | Values                                                                                                                                                                                                                                                                                                                         |
+| ----------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Effect      | Allow or deny permission to a list of resources                            | Allow Deny                                                                                                                                                                                                                                                                                                                     |
+| Action      | Allow any or specific actions on the attached resource(s)                  | Any Create (POST) View (GET/HEAD/OPTIONS) Delete (DELETE) Update (PUT/PATCH)                                                                                                                                                                                                                                                  |
+| Resource(s) | Path of the resource. Policy definitions can contain one or more resources | Path of the resource. Example: `/workspaces/{workspaceID}/channels` <br /> <br /> **Valid wildcards:** <br /> - Any value for a specific part of the path e.g. `/workspaces/\*/channels` (applies to all workspaces in an organisation)\*\* <br /> - Any value for all child paths e.g. `/workspaces/\*/channels/\*\*` (access to all paths below /channels) |
+

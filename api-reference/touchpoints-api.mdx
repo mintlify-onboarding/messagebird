@@ -1,0 +1,18 @@
+---
+title: "Touchpoints API"
+---
+
+The MessageBird Touchpoints API enables customers to create and manage dynamic customer interactions and rich media experiences across various channels. By leveraging it, developers can effortlessly design and deploy personalized messaging experiences across platforms such as SMS, Email, WhatsApp, and more. To get started with the Touchpoints API, you can register for a free account and get [API access](/api/api-access). The [API reference](/api/touchpoints-api/api-reference) provides detailed instructions and examples for integrating the API into your application or system. Alternatively, you can check [our guide](/api/touchpoints-api/supported-projects/whatsapp-approved-message-templates/creating-your-first-whatsapp-message-template) on how to create your first Whatsapp Message Template.
+
+## Permissions required for Touchpoints actions
+
+To manage the different Touchpoins resources via the API, the access key that is being used needs a certain level of permissions to carry out these actions. Make sure you create the right [access policies](/api/api-access/access-policies) for your needs. To get a list of endpoints, please visit the [API reference](/api/touchpoints-api/api-reference).
+
+### An access policy for viewing projects
+
+The example below give your access key permissions to view all the projects in all of your workspaces but you can replace the wildcards with either specific workspaces or channel IDs to limit the scope further.
+
+| Action                     | Resource                   |
+| -------------------------- | -------------------------- |
+| List projects in workspace | /workspaces/\*/projects    |
+| Get a specific project     | /workspaces/\*/projects/\* |
